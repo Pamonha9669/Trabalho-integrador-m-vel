@@ -12,10 +12,17 @@ class PesquisaScreen extends StatefulWidget {
 
 class _PesquisaScreenState extends State<PesquisaScreen> {
   final TextEditingController _searchController = TextEditingController();
+  late DoceController _controller;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    _controller = context.read<DoceController>();
+  }
 
   @override
   void dispose() {
-    context.read<DoceController>().limparPesquisa();
+    _controller.limparPesquisa();
     _searchController.dispose();
     super.dispose();
   }
@@ -62,7 +69,12 @@ class _PesquisaScreenState extends State<PesquisaScreen> {
                 itemCount: controller.doceFiltrados.length,
                 itemBuilder: (context, index) {
                   final doce = controller.doceFiltrados[index];
-                  return DoceCard(doce: doce, mostrarFavorito: false);
+                  return DoceCard(
+                    doce: doce,
+                    onFavoritoPressed: (){
+                      context.read<DoceController>().toggleFavorito(doce);
+                  }
+                );
                 },
               ),
             ),

@@ -58,7 +58,7 @@ class DoceController extends ChangeNotifier {
     if (_termoPesquisa.isEmpty) return _doces;
     return _doces
         .where((d) =>
-            d.nome.toLowerCase().contains(_termoPesquisa.toLowerCase()))
+            d.nome.toLowerCase().startsWith(_termoPesquisa.toLowerCase()))
         .toList();
   }
 

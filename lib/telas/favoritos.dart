@@ -25,7 +25,12 @@ class FavoritosScreen extends StatelessWidget {
               itemCount: favoritos.length,
               itemBuilder: (context, index) {
                 final doce = favoritos[index];
-                return DoceCard(doce: doce, mostrarFavorito: false);
+                return DoceCard(
+                  doce: doce,
+                  onFavoritoPressed: (){
+                    context.read<DoceController>().toggleFavorito(doce);
+                  }
+                );
               },
             ),
     );
