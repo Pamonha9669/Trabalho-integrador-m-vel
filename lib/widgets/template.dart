@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import '../models/doce.dart'; 
 
+<<<<<<< HEAD
+=======
+// AppBar reutilizável para as telas
+>>>>>>> c6a83e411303b8b7810f5b5c185362ccc40aa63b
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String titulo;
 
@@ -10,7 +14,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: const Color(0xFF4A0072),
+<<<<<<< HEAD
       automaticallyImplyLeading: false,
+=======
+>>>>>>> c6a83e411303b8b7810f5b5c185362ccc40aa63b
       title: Text(
         titulo,
         style: const TextStyle(
@@ -26,6 +33,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
+<<<<<<< HEAD
+=======
+// Card reutilizável para exibir um doce
+>>>>>>> c6a83e411303b8b7810f5b5c185362ccc40aa63b
 class DoceCard extends StatelessWidget {
   final Doce doce;
   final VoidCallback? onFavoritoPressed;

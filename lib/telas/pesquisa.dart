@@ -22,7 +22,6 @@ class _PesquisaScreenState extends State<PesquisaScreen> {
 
   @override
   void dispose() {
-    _controller.limparPesquisa();
     _searchController.dispose();
     super.dispose();
   }
