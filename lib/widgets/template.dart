@@ -52,10 +52,15 @@ class DoceCard extends StatelessWidget {
           leading: SizedBox(
             width: 90,
             height: 140,
-            child: Image.asset(
-              doce.imagem,
-              fit: BoxFit.cover,
-            ),
+            child: doce.imagem == null
+                ? const Icon(Icons.cake, size: 40, color: Color(0xFF880E4F))
+                : Image.network(
+                    webHtmlElementStrategy: WebHtmlElementStrategy.prefer,
+                    doce.imagem!,
+                    fit: BoxFit.cover,
+                    errorBuilder: (_, __, ___) =>
+                        const Icon(Icons.broken_image, color: Colors.grey),
+                  ),
           ),
           title: Text(
             doce.nome,
@@ -69,7 +74,7 @@ class DoceCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                doce.preco,
+                doce.precoFormatado,
                 style: const TextStyle(
                   fontSize: 16,
                   color: Color(0xFF4A148C),
