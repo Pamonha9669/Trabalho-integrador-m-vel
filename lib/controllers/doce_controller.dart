@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import '../models/doce.dart';
 
 class DoceController extends ChangeNotifier {
-    static const String baseUrl = 'https://rare-candy.sao.dom.my.id/api';
+    static const String baseUrl = 'https://rare-candy.wasmer.app/api';
   List<Doce> _doces = [];
   final Set<int> _favoritosIds = {};
   String _termoPesquisa = '';

@@ -38,9 +38,10 @@ class HomeScreen extends StatelessWidget {
                     itemBuilder: (context, index) {
                       final doce = controller.doces[index];
                       return DoceCard(
+                        key: ValueKey(doce.id),
                         doce: doce,
                         onFavoritoPressed: () {
-                          context.read<DoceController>().toggleFavorito(doce);
+                        context.read<DoceController>().toggleFavorito(doce);
                         },
                       );
                     },

@@ -68,12 +68,13 @@ class _PesquisaScreenState extends State<PesquisaScreen> {
                 itemCount: controller.doceFiltrados.length,
                 itemBuilder: (context, index) {
                   final doce = controller.doceFiltrados[index];
-                  return DoceCard(
-                    doce: doce,
-                    onFavoritoPressed: (){
+                    return DoceCard(
+                      key: ValueKey(doce.id),
+                      doce: doce,
+                      onFavoritoPressed: () {
                       context.read<DoceController>().toggleFavorito(doce);
-                  }
-                );
+                    },
+                  );
                 },
               ),
             ),
